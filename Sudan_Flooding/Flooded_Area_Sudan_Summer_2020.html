@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.4.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_5559ef7d7c634c94b54628e0cc887c4c {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_5559ef7d7c634c94b54628e0cc887c4c" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_5559ef7d7c634c94b54628e0cc887c4c = L.map(
+        'map_5559ef7d7c634c94b54628e0cc887c4c', {
+        center: [15.5288, 32.5402],
+        zoom: 11,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+
+    
+    var tile_layer_e49f8b629e3d4b42aa40aade7223f08b = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_5559ef7d7c634c94b54628e0cc887c4c);
+    var tile_layer_662ed6d57fe24c148135f140f7a1b13b = L.tileLayer(
+        'https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/6395888b1c80492da189bf11cb027f07-3a6c7e8f87e5b1fd81852fe8241b3a29/tiles/{z}/{x}/{y}',
+        {
+        "attribution": "Map Data &copy; <a href=\"https://earthengine.google.com/\">Google Earth Engine</a>",
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_5559ef7d7c634c94b54628e0cc887c4c);
+    var tile_layer_b71ee2a5b7914c57992ad884d11f389b = L.tileLayer(
+        'https://earthengine.googleapis.com/v1alpha/projects/earthengine-legacy/maps/03e11735c616f376576856384e09a4a0-c3ec7197f36ac1e279194af7f9b30929/tiles/{z}/{x}/{y}',
+        {
+        "attribution": "Map Data &copy; <a href=\"https://earthengine.google.com/\">Google Earth Engine</a>",
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_5559ef7d7c634c94b54628e0cc887c4c);
+    
+            var layer_control_4fd62a0f7f2c4f9c957df9d652b28f81 = {
+                base_layers : { "openstreetmap" : tile_layer_e49f8b629e3d4b42aa40aade7223f08b, },
+                overlays : { "flooded areas VV - Red" : tile_layer_662ed6d57fe24c148135f140f7a1b13b,"flooded areas VH - Red" : tile_layer_b71ee2a5b7914c57992ad884d11f389b, }
+                };
+            L.control.layers(
+                layer_control_4fd62a0f7f2c4f9c957df9d652b28f81.base_layers,
+                layer_control_4fd62a0f7f2c4f9c957df9d652b28f81.overlays,
+                {position: 'topright',
+                 collapsed: true,
+                 autoZIndex: true
+                }).addTo(map_5559ef7d7c634c94b54628e0cc887c4c);
+            
+        
+</script>
